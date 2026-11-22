@@ -1,0 +1,47 @@
+{
+  "name": "exchange-key-doctor",
+  "version": "0.1.1",
+  "description": "Find leaked crypto exchange API keys (Binance, Bybit, OKX, Bitget) in your code, check if your key can withdraw, and explain exchange API key errors. Includes gitleaks rules.",
+  "main": "index.js",
+  "bin": {
+    "exchange-key-doctor": "bin/exchange-key-doctor.js"
+  },
+  "files": [
+    "bin/",
+    "src/",
+    "rules/",
+    "index.js",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build:rules": "node src/gitleaks.js > rules/gitleaks.toml",
+    "test": "node --test test/*.test.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "binance",
+    "bybit",
+    "okx",
+    "bitget",
+    "api-key",
+    "secret-scanning",
+    "gitleaks",
+    "trading-bot",
+    "ccxt",
+    "security",
+    "pre-commit"
+  ],
+  "license": "MIT",
+  "author": "YourAITools",
+  "homepage": "https://quantaira.app/api-key-safety-checker?utm_source=npm&utm_medium=cli&utm_campaign=exchange-key-doctor",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Duffey234/exchange-key-doctor.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Duffey234/exchange-key-doctor/issues"
+  }
+}

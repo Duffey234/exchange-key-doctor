@@ -6,7 +6,7 @@ const { buildRequest, analyze, checkKey, HOSTS } = require('../src/check');
 
 test('Binance signature matches the official docs example vector', () => {
   // From Binance API docs (SIGNED endpoint examples).
-  const secret = 'NhqPtmdSJYdKjVHjA7PZj4Mge3R5YNiP1e3UZjInClVN65XAbvqqM6A7H5fATj0j'; // public docs vector, exchange-key-doctor:allow
+  const secret = 'NhqPtmdSJYdKjVHjA7PZj4Mge3R5YNiP1e3UZjInClVN65XAbvqqM6A7H5fATj0j'; // public Binance docs example vector, not a real key. exchange-key-doctor:allow gitleaks:allow
   const qs = 'symbol=LTCBTC&side=BUY&type=LIMIT&timeInForce=GTC&quantity=1&price=0.1&recvWindow=5000&timestamp=1499827319559';
   const sig = crypto.createHmac('sha256', secret).update(qs).digest('hex');
   assert.strictEqual(sig, 'c8db56825ae71d6d79447849e617115f4a920fa2acdcab2b053c4b2838bd6b71');
